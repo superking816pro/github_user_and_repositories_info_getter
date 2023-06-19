@@ -8,15 +8,18 @@ openwebbrowser = webbrowser.open(inputURL, new=2)
 time.sleep(2)
 repoornot = input("dou you want to see the information about their repositories(y/n): ")
 
-if repoornot == "y":
-    InputURL = 'https://api.github.com/users/'+username+'/repos'
-    openwebbrowser = webbrowser.open(InputURL, new=2)
-    time.sleep(10)
+def choose():
+    if repoornot == "y" or "Y":
+        InputURL = 'https://api.github.com/users/'+username+'/repos'
+        openwebbrowser = webbrowser.open(InputURL, new=2)
+        time.sleep(10)
 
-if repoornot == "n":
-    print("terminating process")
-    time.sleep(5)
+    if repoornot == "n" or "N":
+        print("terminating process")
+        time.sleep(5)
 
-else:
-    print("enter only y or n (now try running the application again)")
-    time.sleep(3)
+    else:
+        print("enter y or n only")
+        choose()
+        
+choose()        
